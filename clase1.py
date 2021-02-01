@@ -59,6 +59,8 @@ ic = flopy.mf6.ModflowGwfic(gwf, pname="ic", strt=start)
 
 
 #Crear el paquete de flujo de propiedades de nodo_ controla el flujo entre celdas
+k=np.ones([10,N,N])
+k[1,:,:]=5e-3
 npf = flopy.mf6.ModflowGwfnpf(gwf, icelltype=1, k=k, save_flows=True)
 
 #
